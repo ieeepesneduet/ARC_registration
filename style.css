@@ -79,7 +79,10 @@
     display: inline-flex;
 }
 
-
+p{
+  font-size: 15px;
+  text-align: justify;
+}
 
 
 @media only screen and (max-width: 500px) {
@@ -93,5 +96,10 @@
   background-color: white;
   padding: 10px;
   box-shadow: none;
+}
+
+p{
+  font-size: 12px;
+  text-align: justify;
 }
 }
