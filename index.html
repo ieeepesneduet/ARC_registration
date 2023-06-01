@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+<!--CSS File -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+<!-- MDB -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css" rel="stylesheet"/>
+
+
+<script>function display_ct7() {
+  var x = new Date()
+  
+  var month=(x.getMonth() +1).toString();
+  month=month.length==1 ? 0+month : month;
+  
+  var dt=x.getDate().toString();
+  dt=dt.length==1 ? 0+dt : dt;
+  
+  var x1=month + "/" + dt + "/" + x.getFullYear(); 
+  document.getElementById('ct7').innerHTML = x1;
+  display_c7();
+   }
+   function display_c7(){
+var refresh=1000; // Refresh rate in milli seconds
+mytime=setTimeout('display_ct7()',refresh)
+cl();
+}
+display_c7()
+  function cl(){
+  let cl =document.getElementById("ct7").innerHTML
+  let date1 = new Date(cl).getTime();
+  //  ENTER THE CLOSING DATE HERE....
+ // format MM/DD/YEAR....
+  let date2 = new Date("06/15/2023").getTime();
+ if (date1 >= date2) {
+    document.getElementById("box").style.display = "none";
+   document.getElementById("box2").style.display = "block";
+  } 
+  
+
+}
+
+
+
+</script>
+</head>
+
+
+<body>
+
+  <span style="display: none;" id='ct7' style="background-color: #FFFF00"></span>
+  <div class="h">
+    <img class="navLogo" src="nav.png" alt="IEEE PES NEDUET Logo">
+</div>
+
+
+  <div class="box" id="box">
+    <div class="container">
+      <h1> ARC Registration Form</h1>
+  </div>
+  <div class="container-xxl">
+    <hr class="hr" />
+</div>
+    <div class="container-sm">
+    <form name="arcform" >
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+          <input type="text" id="name" class="form-control"  name="name" required/>
+          <label class="form-label" for="form4Example1">Name</label>
+        </div>
+      
+        <!-- Email input -->
+        <div class="form-outline mb-4">
+          <input type="email" id="form4Example2" class="form-control" name="email" required/>
+          <label class="form-label" for="email">Email address</label>
+        </div>
+        <!--phone No Input-->
+        <div class="form-outline mb-4">
+            <input type="tel" id="form4Example2" class="form-control"  name="phoneno" pattern="[0-9]{11}"required/>
+            <label class="form-label" for="phoneno">Phone no</label>
+        </div>
+        <!--Department Input-->
+        <div class="Form mb-4">
+            <label class="form-label" for="Department">Select your Department</label>
+                <select class="form-control" name="department" id="Department">
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Computer Science & Information Technology">Computer Science & Information Technology </option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Humanities">Humanities</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Urban and Infrastructure Engineering">Urban and Infrastructure Engineering</option>
+                    <option value="Petroleum Engineering">Petroleum Engineering</option>
+                    <option value="Earthquake Engineering">Earthquake Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Textile Engineering">Textile Engineering</option>
+                    <option value="Industrial and Manufacturing Engineering">Industrial and Manufacturing Engineering</option>
+                    <option value="Automotive and Marine Engineering">Automotive and Marine Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Computer and Information Systems Engineering">Computer and Information Systems Engineering</option>
+                    <option value="Electronic Engineering">Electronic Engineering</option>
+                    <option value="Bio-Medical Engineering">Bio-Medical Engineering</option>
+                    <option value="Telecommunications Engineering">Telecommunications Engineering</option>
+                    <option value="Chemical Engineering">Chemical Engineering</option>
+                    <option value="Materials Engineering">Materials Engineering</option>
+                    <option value="Metallurgical Engineering">Metallurgical Engineering</option>
+                    <option value="Polymer and Petrochemical Engineering">Polymer and Petrochemical Engineering</option>
+                    <option value="Food Engineering">Food Engineering</option>
+                    <option value="Environmental Engineering">Environmental Engineering</option>
+                    <option value="Architecture and Planning">Architecture and Planning</option>
+                    <option value="Economics and Management Sciences">Economics and Management Sciences</option>
+                </select>
+
+        </div>
+
+
+        <!-- Mocules Checkbox -->
+        <label class="form-label">Select Module</label>
+        <div class="form-check  mb-4">
+            <input class="form-check-input me-2" type="checkbox" name="Hiring Saga" value="Hiring Saga" id="Module1"  />
+            <label class="form-check-label" for="Module1">
+              Hiring Saga (PKR 200/-)
+            </label>
+          </div>
+          <div class="form-check  mb-4">
+            <input class="form-check-input me-2" type="checkbox" name="Mysteria" value="Mysteria" id="Module2" onclick="handleModuleSelection()" />
+            <label class="form-check-label" for="Module2">
+              Mysteria (PKR 600/-)
+            </label>
+          </div>
+          <div id="memberNames" style="display: none;">
+            <label class="form-label">Member Names</label>
+            <input type="text" class="form-control" name="mysteria_1" placeholder="Member 2" /><br>
+            <input type="text" class="form-control" name="mysteria_2" placeholder="Member 3" /><br>
+            <input type="text" class="form-control" name="mysteria_3" placeholder="Member 4" /><br>
+            <!-- Add more input fields if needed -->
+          </div>
+        <div class="form-check  mb-4">
+            <input class="form-check-input me-2" type="checkbox" name="Code in the Dark" value="Code in the Dark" id="Module3" onclick="handleModuleSelection2()"  />
+            <label class="form-check-label" for="Module3">
+              Code in the Dark (PKR 300/-)
+            </label>
+          </div>
+          <div id="memberNames2" style="display: none;">
+            <label class="form-label">Member Names</label>
+            <input type="text" class="form-control" name="code_1" placeholder="Member 2" /><br>
+            <!-- Add more input fields if needed -->
+          </div>
+        <div class="form-check  mb-4">
+            <input class="form-check-input me-2" type="checkbox" name="Blaze" value="Blaze" id="Module4" onclick="handleModuleSelection4()" />
+            <label class="form-check-label" for="Module4">
+              Blaze (PKR 450/-)
+            </label>
+          </div>
+          <div id="memberNames4" style="display: none;">
+            <label class="form-label">Member Names</label>
+            <input type="text" class="form-control" name="blaze_1" placeholder="Member 2" /><br>
+            <input type="text" class="form-control" name="blaze_2" placeholder="Member 3" /><br>
+            <!-- Add more input fields if needed -->
+          </div>
+          <div class="form-check  mb-4">
+            <input class="form-check-input me-2" type="checkbox" name="PESatron" value="PESatron" id="Module5" onclick="handleModuleSelection1()" />
+            <label class="form-check-label" for="Module5">
+              PESatron (PKR 500/-)
+            </label>
+          </div>
+          <div id="memberNames1" style="display: none;">
+            <label class="form-label">Member Names</label>
+            <input type="text" class="form-control" name="pesatron_1" placeholder="Member 2" /><br>
+            <input type="text" class="form-control" name="pesatron_2" placeholder="Member 3" /><br>
+            <input type="text" class="form-control" name="pesatron_3" placeholder="Member 4" /><br>
+            <input type="text" class="form-control" name="pesatron_4" placeholder="Member 5" /><br>
+            <!-- Add more input fields if needed -->
+          </div>
+          <div class="form-check  mb-4">
+            <input class="form-check-input me-2" type="checkbox" name="shutterquest" value="shutterquest" id="Module6" onclick="handleModuleSelection3()" />
+            <label class="form-check-label" for="Module6">
+              ShutterQuest (PKR 300/-)
+            </label>
+          </div>
+          <div id="memberNames3" style="display: none;">
+            <label class="form-label">Member Names</label>
+            <input type="text" class="form-control" name="shutter_1" placeholder="Member 2" /><br>
+            <!-- Add more input fields if needed -->
+          </div>
+          <div class="form-check  mb-4">
+            <input class="form-check-input me-2" type="checkbox" name="pitchperfect" value="pitchperfect" id="Module7" onclick="handleModuleSelection5()" />
+            <label class="form-check-label" for="Module7">
+              Pitch Perfect (PKR 300/-)
+            </label>
+          </div>
+          <div id="memberNames5" style="display: none;">
+            <label class="form-label">Member Names</label>
+            <input type="text" class="form-control" name="pitch_1" placeholder="Member 2" /><br>
+            <input type="text" class="form-control" name="pitch_2" placeholder="Member 3" /><br>
+            <!-- Add more input fields if needed -->
+          </div>
+          
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+      </form>
+    </div>
+  </div>
+ <script>
+  function handleModuleSelection() {
+  var mysteriaCheckbox = document.getElementById("Module2");
+  var memberNamesDiv = document.getElementById("memberNames");
+
+  if (mysteriaCheckbox.checked) {
+    memberNamesDiv.style.display = "block";
+  } else {
+    memberNamesDiv.style.display = "none";
+  }
+}
+
+function handleModuleSelection1() {
+  var pesatronCheckbox = document.getElementById("Module5");
+  var memberNamesDiv = document.getElementById("memberNames1");
+
+  if (pesatronCheckbox.checked) {
+    memberNamesDiv.style.display = "block";
+  } else {
+    memberNamesDiv.style.display = "none";
+  }
+}
+
+function handleModuleSelection2() {
+  var code = document.getElementById("Module3");
+  var memberNamesDiv = document.getElementById("memberNames2");
+
+  if (code.checked) {
+    memberNamesDiv.style.display = "block";
+  } else {
+    memberNamesDiv.style.display = "none";
+  }
+}
+function handleModuleSelection3() {
+  var s = document.getElementById("Module6");
+  var memberNamesDiv = document.getElementById("memberNames3");
+
+  if (s.checked) {
+    memberNamesDiv.style.display = "block";
+  } else {
+    memberNamesDiv.style.display = "none";
+  }
+}
+
+function handleModuleSelection4() {
+  var s = document.getElementById("Module4");
+  var memberNamesDiv = document.getElementById("memberNames4");
+
+  if (s.checked) {
+    memberNamesDiv.style.display = "block";
+  } else {
+    memberNamesDiv.style.display = "none";
+  }
+}
+
+function handleModuleSelection5() {
+  var s = document.getElementById("Module7");
+  var memberNamesDiv = document.getElementById("memberNames5");
+
+  if (s.checked) {
+    memberNamesDiv.style.display = "block";
+  } else {
+    memberNamesDiv.style.display = "none";
+  }
+}
+
+ </script>
+
+  <div class="box2" id="box2">
+    <h4>The Registrations are closed...!</h4>
+
+  </div>
+</div>
+
+  <div class="footer bg-dark">
+    <div class="mr-auto ftext text-center">
+        <p class="text-light m-1 d-inline-flex">Designed and Developed by</p>
+        <p class="green m-1 d-inline-flex">IEEE PES NEDUET IT TEAM 2022-23</p>
+    </div>
+</div>
+
+
+
+      <!-- MDB -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
+
+   <!-- alert code  -->
+   <script>
+    // place your script webbapp link.
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyn1egpqr_mI7zYMwio5F2uU76FagOspxua8fYEOpVpAMetGG5nYig0Bw4cMhMV-mleUw/exec"
+    const form = document.forms['arcform']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank you! your form is submitted successfully." ))
+        .then(() => {  window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
