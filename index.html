@@ -300,18 +300,24 @@ function handleModuleSelection5() {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"></script>
 
    <!-- alert code  -->
-   <script>
-    // place your script webbapp link.
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyn1egpqr_mI7zYMwio5F2uU76FagOspxua8fYEOpVpAMetGG5nYig0Bw4cMhMV-mleUw/exec"
-    const form = document.forms['arcform']
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thank you! your form is submitted successfully." ))
-        .then(() => {  window.location.reload(); })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
+<script>
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyn1egpqr_mI7zYMwio5F2uU76FagOspxua8fYEOpVpAMetGG5nYig0Bw4cMhMV-mleUw/exec";
+  const form = document.forms['arcform'];
+  const submitButton = document.querySelector('.btn');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    submitButton.disabled = true; // Disable the submit button after submission
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+      .then(response => {
+        alert("Thank you! Your form has been submitted successfully.");
+        window.location.reload();
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        submitButton.disabled = false; // Re-enable the submit button in case of an error
+      });
+  });
+</script>
 </body>
 </html>
