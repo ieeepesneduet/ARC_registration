@@ -130,10 +130,13 @@ display_c7()
         <!-- Mocules Checkbox -->
         <label class="form-label">Select Module</label>
         <div class="form-check  mb-4">
-            <input class="form-check-input me-2" type="checkbox" name="Hiring Saga" value="Hiring Saga" id="Module1"  />
+            <input class="form-check-input me-2" type="checkbox" name="Hiring Saga" value="Hiring Saga" id="Module1" onclick="handleModuleSelection6()"  />
             <label class="form-check-label" for="Module1">
               Hiring Saga (PKR 200/-)
             </label>
+          </div>
+          <div id="memberNames6" style="display: none;">
+            <p>Hiring Saga, an integral part of the prestigious ARC event hosted by IEEE PES NEDUET, is strategically designed to align with the contemporary hiring practices of companies. Recognizing that companies now evaluate job candidates through case studies and interviews, this module focuses on providing participants with practical experience and skills in handling such assessments. By simulating real-world scenarios, Hiring Saga equips participants with the expertise needed to excel in the modern job market.</p>
           </div>
           <div class="form-check  mb-4">
             <input class="form-check-input me-2" type="checkbox" name="Mysteria" value="Mysteria" id="Module2" onclick="handleModuleSelection()" />
@@ -142,9 +145,12 @@ display_c7()
             </label>
           </div>
           <div id="memberNames" style="display: none;">
+            <p>Come through these hallowed walls of Mysteria where magic is in the air, whispers of secrets waiting to be unraveled and dark forces crawling through the walls to take over.<br>From the flicker of wands, Mysteria will take you to a place where reality and fantasy starts to blur. Do you have what it takes to go through challenges and solve mysteries.<br>Then put on your wizarding robes, gather your wits and bravery and come with us to the mystical world of mysteria where exciting quests awaits those who believe in miracles of magic.</p>
             <label class="form-label">Member Names</label>
             <input type="text" class="form-control" name="mysteria_1" placeholder="Member 2" /><br>
             <input type="text" class="form-control" name="mysteria_2" placeholder="Member 3" /><br>
+            <input type="text" class="form-control" name="mysteria_3" placeholder="Member 4" /><br>
+
             <!-- Add more input fields if needed -->
           </div>
         <div class="form-check  mb-4">
@@ -154,6 +160,7 @@ display_c7()
             </label>
           </div>
           <div id="memberNames2" style="display: none;">
+            <p>Embark on an extraordinary journey into the depths of Code in the Dark. Unleash your front-end wizardry in this captivating competition where contestants bring a website design to life from a single screenshot. With no previews or measuring tools, navigate the realm of HTML and CSS with blindfolded brilliance. Unleash your creativity, defy the limits, and let your code illuminate the path to victory.</p>
             <label class="form-label">Member Names</label>
             <input type="text" class="form-control" name="code_1" placeholder="Member 2" /><br>
             <!-- Add more input fields if needed -->
@@ -165,6 +172,7 @@ display_c7()
             </label>
           </div>
           <div id="memberNames4" style="display: none;">
+            <p>Blaze, a scorching event module, ignites the stage with a rapid-fire quiz competition that illuminates the realms of mathematics, English, and IQ. This sizzling showdown challenges participants' minds, setting ablaze their knowledge and critical thinking. Brace yourself for a fiery fusion of brain-burning questions, where participants must swiftly navigate the intellectual inferno to emerge as the blazing champions.</p>
             <label class="form-label">Member Names</label>
             <input type="text" class="form-control" name="blaze_1" placeholder="Member 2" /><br>
             <input type="text" class="form-control" name="blaze_2" placeholder="Member 3" /><br>
@@ -177,6 +185,7 @@ display_c7()
             </label>
           </div>
           <div id="memberNames1" style="display: none;">
+            <p>PESatron is an exciting competition that offers students the opportunity to showcase their projects and present them to a diverse audience. It serves as a platform for students to demonstrate their hard work, innovation, and technical prowess, allowing them to gain recognition and valuable feedback on their projects. Participating in PESatron opens doors to networking opportunities, skill development, and the possibility of earning recognition and prizes for their outstanding work.</p>
             <label class="form-label">Member Names</label>
             <input type="text" class="form-control" name="pesatron_1" placeholder="Member 2" /><br>
             <input type="text" class="form-control" name="pesatron_2" placeholder="Member 3" /><br>
@@ -191,6 +200,7 @@ display_c7()
             </label>
           </div>
           <div id="memberNames3" style="display: none;">
+            <p>Unlock the vibrant world of visual storytelling in the captivating Photography and Design competition, a cornerstone module of ARC. As the media landscape continues to thrive and evolve, this immersive competition shines a spotlight on the extraordinary talents yearning to rise. Step into the limelight, where visionary individuals harness the power of their lenses and artistic prowess to captivate hearts and minds. Embrace the perfect canvas to showcase your unique perspective, ignite imaginations, and unveil the boundless potential that lies within the realm of photography and design.</p>
             <label class="form-label">Member Names</label>
             <input type="text" class="form-control" name="shutter_1" placeholder="Member 2" /><br>
             <!-- Add more input fields if needed -->
@@ -202,6 +212,7 @@ display_c7()
             </label>
           </div>
           <div id="memberNames5" style="display: none;">
+            <p>Introducing "Pitch Perfect" - An Extraordinary Symposium of Innovation for ARC!<br>Prepare to be amazed as we unveil the latest gem in the dazzling lineup of modules for ARC. Brace yourselves for a groundbreaking event that will ignite a symphony of ideas, revolutionize engineering education, and unveil the untapped potential of brilliant minds. The air will be charged with anticipation as participants embark on a transformative journey, traversing the realms of communication, comprehension, problem-solving, and analytical prowess.<br>A panel of esteemed business professionals  will listen intently, dissecting each pitch with unparalleled expertise. In this crucible of innovation, participants will unlock their hidden potential, their talents reaching crescendos that surpass all expectations. They will be groomed, refined, and shaped into the leaders of tomorrow, poised to meet the challenges and demands of the real-life industry landscape.</p>
             <label class="form-label">Member Names</label>
             <input type="text" class="form-control" name="pitch_1" placeholder="Member 2" /><br>
             <input type="text" class="form-control" name="pitch_2" placeholder="Member 3" /><br>
@@ -209,7 +220,7 @@ display_c7()
           </div>
           
         <!-- Submit button -->
-        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+        <button type="submit" id="sub" class="btn btn-primary btn-block mb-4" >Submit</button>
       </form>
     </div>
   </div>
@@ -271,6 +282,17 @@ function handleModuleSelection4() {
 function handleModuleSelection5() {
   var s = document.getElementById("Module7");
   var memberNamesDiv = document.getElementById("memberNames5");
+
+  if (s.checked) {
+    memberNamesDiv.style.display = "block";
+  } else {
+    memberNamesDiv.style.display = "none";
+  }
+}
+
+function handleModuleSelection6() {
+  var s = document.getElementById("Module1");
+  var memberNamesDiv = document.getElementById("memberNames6");
 
   if (s.checked) {
     memberNamesDiv.style.display = "block";
